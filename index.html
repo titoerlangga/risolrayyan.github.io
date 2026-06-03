@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risol Rayyan - Jagonya Risol Lumer!</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#F58220', // Sesuai warna logo
+                            yellow: '#FFB800',
+                            light: '#FFF6EB',
+                            dark: '#6B3100', // Warna teks coklat dari logo
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Fredoka', 'sans-serif'],
+                        body: ['Nunito', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Nunito', sans-serif; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Fredoka', sans-serif; }
+        
+        .hero-bg {
+            background-color: #FFF6EB;
+            background-image: radial-gradient(#F58220 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.9;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(245, 130, 32, 0.2), 0 10px 10px -5px rgba(245, 130, 32, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-dark antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-orange-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="https://raw.githubusercontent.com/titoerlangga/risolrayyan.github.io/refs/heads/main/1779172194257.png" alt="Logo Risol Rayyan" class="h-12 w-12 rounded-full border-2 border-brand-orange object-cover">
+                    <span class="font-heading text-2xl font-bold text-brand-orange tracking-wide">Risol Rayyan</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#beranda" class="text-brand-dark hover:text-brand-orange font-bold transition">Beranda</a>
+                    <a href="#tentang" class="text-brand-dark hover:text-brand-orange font-bold transition">Tentang Kami</a>
+                    <a href="#menu" class="text-brand-dark hover:text-brand-orange font-bold transition">Menu Varian</a>
+                    <a href="#kontak" class="bg-brand-orange hover:bg-orange-600 text-white px-6 py-2 rounded-full font-bold shadow-md transition transform hover:scale-105">Pesan Sekarang</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-orange hover:text-orange-700 focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-orange-100 pb-4">
+            <div class="flex flex-col px-4 pt-2 space-y-3">
+                <a href="#beranda" class="text-brand-dark hover:text-brand-orange font-bold py-2">Beranda</a>
+                <a href="#tentang" class="text-brand-dark hover:text-brand-orange font-bold py-2">Tentang Kami</a>
+                <a href="#menu" class="text-brand-dark hover:text-brand-orange font-bold py-2">Menu</a>
+                <a href="#kontak" class="text-center bg-brand-orange text-white px-4 py-3 rounded-xl font-bold">Pesan Sekarang</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="pt-28 pb-16 md:pt-36 md:pb-24 hero-bg relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Text Content -->
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <div class="inline-block bg-orange-100 text-brand-orange font-bold px-4 py-2 rounded-full mb-4 border border-orange-200">
+                        ✨ Renyah di Luar, Lumer di Dalam!
+                    </div>
+                    <h1 class="font-heading text-5xl md:text-6xl font-bold leading-tight mb-6">
+                        Nikmati Kelezatan <br>
+                        <span class="text-brand-orange">Risol Rayyan</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-700 mb-8 font-body leading-relaxed">
+                        Cemilan sempurna untuk menemani setiap momen spesialmu. Dibuat dengan bahan premium, dijamin nagih sejak gigitan pertama!
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#menu" class="bg-white border-2 border-brand-orange text-brand-orange hover:bg-orange-50 px-8 py-3 rounded-full font-bold shadow-md transition text-lg text-center">
+                            Lihat Menu
+                        </a>
+                        <a href="#kontak" class="bg-brand-orange hover:bg-orange-600 text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-orange-500/30 transition text-lg text-center flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-xl"></i> Order Sekarang
+                        </a>
+                    </div>
+                </div>
+                <!-- Hero Image -->
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-brand-yellow rounded-full blur-3xl opacity-30 transform scale-110"></div>
+                        <img src="https://raw.githubusercontent.com/titoerlangga/risolrayyan.github.io/refs/heads/main/1779172194257.png" alt="Risol Rayyan" class="relative z-10 w-72 md:w-96 rounded-full border-8 border-white shadow-2xl transform rotate-3 hover:rotate-0 transition duration-500">
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border-2 border-brand-orange z-20 animate-bounce">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-green-100 p-2 rounded-full text-green-600">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <div>
+                                    <p class="font-heading font-bold text-sm">100% Halal</p>
+                                    <p class="text-xs text-gray-500">& Higienis</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Section -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="w-full md:w-5/12 flex justify-center">
+                    <img src="https://raw.githubusercontent.com/titoerlangga/risolrayyan.github.io/refs/heads/main/IMG-20260519-WA0009.jpg" alt="Promo Risol Rayyan" class="w-full max-w-sm rounded-3xl shadow-xl border-4 border-brand-light transform -rotate-2">
+                </div>
+                <div class="w-full md:w-7/12">
+                    <h2 class="font-heading text-4xl font-bold mb-6 text-brand-orange">Kenapa Harus Risol Rayyan?</h2>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        Di <strong>Risol Rayyan</strong> , kami sangat peduli dengan kualitas rasa dan kepuasan pelanggan. Setiap risol dibuat dengan sepenuh hati menggunakan resep rahasia keluarga dan bahan-bahan segar pilihan.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4">
+                            <div class="bg-orange-100 text-brand-orange p-2 rounded-full mt-1">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl font-heading">Kulit Risol Super Gurih & Renyah</h3>
+                                <p class="text-gray-600">Tekstur kulit yang *crispy* di luar namun tetap lembut tidak alot.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="bg-orange-100 text-brand-orange p-2 rounded-full mt-1">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl font-heading">Isian Melimpah (Pasti Lumer!)</h3>
+                                <p class="text-gray-600">Kami tidak pelit isian! Rasakan sensasi lumer dan padat di setiap gigitan.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="bg-orange-100 text-brand-orange p-2 rounded-full mt-1">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl font-heading">Selalu Fresh (Dibuat Setiap Hari)</h3>
+                                <p class="text-gray-600">Bukan frozen food stok lama. Risol selalu fresh dari penggorengan.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Varian Section -->
+    <section id="menu" class="py-20 bg-brand-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-heading text-4xl font-bold mb-4 text-brand-dark">Pilihan Varian Favorit</h2>
+                <p class="text-gray-600 text-lg">Dari yang gurih sampai yang manis, kami punya semua varian untuk memanjakan lidah Anda. Mana favoritmu?</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Menu 1: Risol Mayo -->
+                <div class="bg-white rounded-3xl p-6 shadow-lg border-2 border-orange-100 card-hover relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-bl-xl z-10">Best Seller</div>
+                    <div class="bg-orange-50 rounded-2xl p-4 mb-6 flex justify-center items-center h-40">
+                        <i class="fas fa-cheese text-6xl text-brand-yellow group-hover:scale-110 transition duration-300"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-brand-dark mb-2">Risol Mayo</h3>
+                    <p class="text-gray-600 text-sm mb-4">Paduan nikmat smoked beef, telur rebus, dan lumeran mayonnaise keju yang super creamy.</p>
+                    <a href="#kontak" class="block w-full text-center bg-orange-100 hover:bg-brand-orange hover:text-white text-brand-orange font-bold py-2 rounded-xl transition">
+                        Pesan Ini
+                    </a>
+                </div>
+
+                <!-- Menu 2: Risol Ayam -->
+                <div class="bg-white rounded-3xl p-6 shadow-lg border-2 border-orange-100 card-hover group">
+                    <div class="bg-orange-50 rounded-2xl p-4 mb-6 flex justify-center items-center h-40">
+                        <i class="fas fa-drumstick-bite text-6xl text-orange-400 group-hover:scale-110 transition duration-300"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-brand-dark mb-2">Risol Ayam</h3>
+                    <p class="text-gray-600 text-sm mb-4">Berisi suwiran daging ayam asli dengan bumbu rempah pilihan yang gurih meresap paripurna.</p>
+                    <a href="#kontak" class="block w-full text-center bg-orange-100 hover:bg-brand-orange hover:text-white text-brand-orange font-bold py-2 rounded-xl transition">
+                        Pesan Ini
+                    </a>
+                </div>
+
+                <!-- Menu 3: Risol Ragout -->
+                <div class="bg-white rounded-3xl p-6 shadow-lg border-2 border-orange-100 card-hover group">
+                    <div class="bg-orange-50 rounded-2xl p-4 mb-6 flex justify-center items-center h-40">
+                        <i class="fas fa-carrot text-6xl text-orange-500 group-hover:scale-110 transition duration-300"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-brand-dark mb-2">Risol Ragout</h3>
+                    <p class="text-gray-600 text-sm mb-4">Isian wortel, kentang, dan ayam yang dimasak dalam saus ragout susu yang creamy dan lembut.</p>
+                    <a href="#kontak" class="block w-full text-center bg-orange-100 hover:bg-brand-orange hover:text-white text-brand-orange font-bold py-2 rounded-xl transition">
+                        Pesan Ini
+                    </a>
+                </div>
+
+                <!-- Menu 4: Risol Coklat -->
+                <div class="bg-white rounded-3xl p-6 shadow-lg border-2 border-orange-100 card-hover group">
+                    <div class="bg-orange-50 rounded-2xl p-4 mb-6 flex justify-center items-center h-40">
+                        <i class="fas fa-cookie-bite text-6xl text-amber-800 group-hover:scale-110 transition duration-300"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-brand-dark mb-2">Risol Coklat</h3>
+                    <p class="text-gray-600 text-sm mb-4">Varian manis yang wajib coba! Kulit renyah dengan isian coklat premium yang lumer saat digigit.</p>
+                    <a href="#kontak" class="block w-full text-center bg-orange-100 hover:bg-brand-orange hover:text-white text-brand-orange font-bold py-2 rounded-xl transition">
+                        Pesan Ini
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Order CTA Section -->
+    <section id="kontak" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 bg-brand-orange rounded-[3rem] p-8 md:p-16 text-center shadow-2xl relative overflow-hidden">
+            <!-- Decorative circle -->
+            <div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-white opacity-10"></div>
+            <div class="absolute bottom-0 left-0 -ml-16 -mb-16 w-48 h-48 rounded-full bg-brand-yellow opacity-20"></div>
+            
+            <div class="relative z-10">
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mb-6">Siap Untuk Ngemil Enak?</h2>
+                <p class="text-orange-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+                    Jangan sampai kehabisan! Pesan Risol Rayyan sekarang juga melalui nomor di bawah ini. Kami siap melayani pesanan untuk acara, rapat, atau sekadar teman ngopi santai.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <!-- Tombol WA 1 -->
+                    <a href="https://wa.me/6282323200198?text=Halo%20Risol%20Rayyan!%20Saya%20mau%20pesan%20risolnya." target="_blank" 
+                       class="w-full sm:w-auto bg-white text-green-600 hover:bg-green-50 px-8 py-4 rounded-2xl font-bold text-lg shadow-lg transform hover:scale-105 transition flex items-center justify-center gap-3">
+                        <i class="fab fa-whatsapp text-3xl"></i>
+                        <div class="text-left">
+                            <span class="block text-xs text-gray-500 font-bold uppercase tracking-wider">Admin 1</span>
+                            <span class="block">0823-2320-0198</span>
+                        </div>
+                    </a>
+
+                    <!-- Tombol WA 2 -->
+                    <a href="https://wa.me/6282323200189?text=Halo%20Risol%20Rayyan!%20Saya%20mau%20pesan%20risolnya." target="_blank" 
+                       class="w-full sm:w-auto bg-white text-green-600 hover:bg-green-50 px-8 py-4 rounded-2xl font-bold text-lg shadow-lg transform hover:scale-105 transition flex items-center justify-center gap-3">
+                        <i class="fab fa-whatsapp text-3xl"></i>
+                        <div class="text-left">
+                            <span class="block text-xs text-gray-500 font-bold uppercase tracking-wider">Admin 2</span>
+                            <span class="block">0823-2320-0189</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-orange-100 py-10 border-t-8 border-brand-orange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-4">
+                    <img src="https://raw.githubusercontent.com/titoerlangga/risolrayyan.github.io/refs/heads/main/1779172194257.png" alt="Logo" class="w-12 h-12 rounded-full border border-orange-500">
+                    <div>
+                        <h4 class="font-heading text-2xl font-bold text-white">Risol Rayyan</h4>
+                        <p class="text-sm">by Tito Erlangga</p>
+                    </div>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#beranda" class="hover:text-white transition">Beranda</a>
+                    <a href="#menu" class="hover:text-white transition">Menu</a>
+                    <a href="#kontak" class="hover:text-white transition">Kontak</a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-orange-900/50 text-center text-sm text-orange-300/80">
+                &copy; <span id="year"></span> Risol Rayyan. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script for mobile menu & year -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
+
+```
